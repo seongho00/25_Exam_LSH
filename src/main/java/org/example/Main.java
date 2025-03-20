@@ -1,24 +1,20 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        List<String> input = new ArrayList<>(Arrays.asList(sc.nextLine().split(" ")));
+        int n = sc.nextInt();
 
-        int height = Integer.parseInt(input.get(0));
-        int width = Integer.parseInt(input.get(1));
-
-        for (int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
-                System.out.print("*");
+        for (int j = n, k = 0; j > 0; j--, k++) {
+            System.out.print(" ".repeat(k));
+            for (int i = n; i > 0; i--) {
+                System.out.print(i + " ");
             }
-            System.out.println();
+            n--;
+            System.out.println(" ");
         }
 
     }
