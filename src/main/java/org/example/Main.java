@@ -1,21 +1,23 @@
 package org.example;
 
-import java.util.Scanner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        List<Integer> list = new ArrayList<>();
 
-        for (int j = n, k = 0; j > 0; j--, k++) {
-            System.out.print(" ".repeat(k));
-            for (int i = n; i > 0; i--) {
-                System.out.print(i + " ");
-            }
-            n--;
-            System.out.println(" ");
+        list.add(0);
+        list.add(1);
+        for (int i = 0; i < 10; i++) {
+            System.out.print(list.get(0) + " ");
+            int a = list.get(0);
+            list.set(0, list.get(1) + a);
+            list.set(1, a);
         }
+
 
     }
 }
